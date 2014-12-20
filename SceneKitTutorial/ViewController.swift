@@ -21,11 +21,32 @@ class ViewController: UIViewController {
         scnView.backgroundColor = UIColor.blackColor()
         
         
-        drawLineOfSpheres(scene)
+        drawLineOfSpheresTouching(scene)
         
         
         scnView.autoenablesDefaultLighting = true
         scnView.allowsCameraControl = true
+    }
+    
+    func drawLineOfSpheresTouching(scene:SCNScene){
+        var radius:CGFloat = 1.0
+        var offset:Float = 0.0
+        for i in 0..<20 {
+            var newRadius:CGFloat = radius - CGFloat(0.05)
+            let sphereGeometry = SCNSphere(radius: radius)
+            var node:SCNNode
+            if i % 2 == 0 {
+                sphereGeometry.firstMaterial?.diffuse.contents = UIColor.greenColor()
+            }else{
+                sphereGeometry.firstMaterial?.diffuse.contents = UIColor.redColor()
+            }
+            node = SCNNode(geometry: sphereGeometry)
+            node.position = SCNVector3(x: offset, y: 0.0, z: 0.0)
+            scene.rootNode.addChildNode(node)
+            
+            radius = newRadius
+            offset += 2 * Float(newRadius)
+        }
     }
     
     func drawLineOfSpheres(scene:SCNScene){
