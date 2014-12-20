@@ -20,11 +20,38 @@ class ViewController: UIViewController {
         scnView.scene = scene
         scnView.backgroundColor = UIColor.blackColor()
         
+        
+        drawLineOfSpheres(scene)
+        
+        
+        scnView.autoenablesDefaultLighting = true
+        scnView.allowsCameraControl = true
+    }
+    
+    func drawLineOfSpheres(scene:SCNScene){
+        let greenGeometry = SCNSphere(radius: 1.0)
+        greenGeometry.firstMaterial?.diffuse.contents = UIColor.greenColor()
+        
+        let redGeometry = SCNSphere(radius: 1.0)
+        redGeometry.firstMaterial?.diffuse.contents = UIColor.redColor()
+        for i in 0..<20 {
+            var node:SCNNode
+            if i % 2 == 0 {
+                node = SCNNode(geometry: greenGeometry)
+            }else{
+                node = SCNNode(geometry: redGeometry)
+            }
+            node.position = SCNVector3(x: 3.0 * Float(i), y: 0.0, z: 0.0)
+            scene.rootNode.addChildNode(node)
+        }
+    }
+    
+    func drawSpheres(scene:SCNScene){
         let sphereGeometry = SCNSphere(radius: 1.0)
         sphereGeometry.firstMaterial?.diffuse.contents = UIColor.redColor()
         let sphereNode = SCNNode(geometry: sphereGeometry)
         //scnView.rootNode.addChildNode(sphereNode)
-        scnView.scene?.rootNode.addChildNode(sphereNode)
+        scene.rootNode.addChildNode(sphereNode)
         
         //SECOND
         let secondSphereGeometry = SCNSphere(radius: 0.5)
@@ -38,10 +65,6 @@ class ViewController: UIViewController {
         let thirdSphereNode = SCNNode(geometry: thirdSphereGeometry)
         thirdSphereNode.position = SCNVector3(x: 0.0, y: 3.0, z: -0.5)
         scene.rootNode.addChildNode(thirdSphereNode)
-        
-        
-        scnView.autoenablesDefaultLighting = true
-        scnView.allowsCameraControl = true
     }
 
     override func didReceiveMemoryWarning() {
