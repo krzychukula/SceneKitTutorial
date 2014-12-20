@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import SceneKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let scnView = self.view as SCNView
+        scnView.scene = PrimitivesScene() as SCNScene
+        scnView.backgroundColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {
