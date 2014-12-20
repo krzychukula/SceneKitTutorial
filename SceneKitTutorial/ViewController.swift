@@ -21,11 +21,33 @@ class ViewController: UIViewController {
         scnView.backgroundColor = UIColor.blackColor()
         
         
-        drawLineOfSpheresTouching(scene)
+        drawGrid(scene)
         
         
         scnView.autoenablesDefaultLighting = true
         scnView.allowsCameraControl = true
+    }
+    
+    func drawGrid(scene:SCNScene){
+        let orangeGeometry = SCNSphere(radius: 1.0)
+        orangeGeometry.firstMaterial?.diffuse.contents = UIColor.greenColor()
+        
+        let purpleGeometry = SCNSphere(radius: 1.0)
+        purpleGeometry.firstMaterial?.diffuse.contents = UIColor.redColor()
+        
+        for i in 0..<20 {
+            for j in 0..<20 {
+                var node:SCNNode
+                if (i + j) % 2 == 0 {
+                    node = SCNNode(geometry: purpleGeometry)
+                }else{
+                    node = SCNNode(geometry: orangeGeometry)
+                }
+                node.position = SCNVector3(x: Float(i) * 2.0, y: Float(j) * 2.0, z: -7.0)
+                scene.rootNode.addChildNode(node)
+            }
+            
+        }
     }
     
     func drawLineOfSpheresTouching(scene:SCNScene){
