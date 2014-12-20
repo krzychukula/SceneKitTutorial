@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         secondSphereNode.position = SCNVector3(x: 3.0, y: 0.0, z: 0.0)
         scene.rootNode.addChildNode(secondSphereNode)
         
+        let thirdSphereGeometry = SCNSphere(radius: 1.5)
+        thirdSphereGeometry.firstMaterial?.diffuse.contents = UIColor.purpleColor()
+        let thirdSphereNode = SCNNode(geometry: thirdSphereGeometry)
+        thirdSphereNode.position = SCNVector3(x: 0.0, y: 3.0, z: -0.5)
+        scene.rootNode.addChildNode(thirdSphereNode)
+        
         
         scnView.autoenablesDefaultLighting = true
         scnView.allowsCameraControl = true
