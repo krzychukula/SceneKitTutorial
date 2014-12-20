@@ -16,13 +16,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let scnView = self.view as SCNView
-        scnView.scene = PrimitivesScene() as SCNScene
+        let scene = PrimitivesScene()
+        scnView.scene = scene
         scnView.backgroundColor = UIColor.blackColor()
         
         let sphereGeometry = SCNSphere(radius: 1.0)
         let sphereNode = SCNNode(geometry: sphereGeometry)
         //scnView.rootNode.addChildNode(sphereNode)
         scnView.scene?.rootNode.addChildNode(sphereNode)
+        
+        //SECOND
+        let secondSphereGeometry = SCNSphere(radius: 0.5)
+        let secondSphereNode = SCNNode(geometry: secondSphereGeometry)
+        secondSphereNode.position = SCNVector3(x: 3.0, y: 0.0, z: 0.0)
+        scene.rootNode.addChildNode(secondSphereNode)
         
         
         scnView.autoenablesDefaultLighting = true
