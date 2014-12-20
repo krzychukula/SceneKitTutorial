@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         scnView.scene?.rootNode.addChildNode(sphereNode)
         
         
+        scnView.autoenablesDefaultLighting = true
     }
 
     override func didReceiveMemoryWarning() {
