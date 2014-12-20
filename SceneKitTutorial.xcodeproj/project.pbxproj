@@ -13,6 +13,7 @@
 		838264D01A45D53900A6CB0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838264CF1A45D53900A6CB0D /* Images.xcassets */; };
 		838264D31A45D53900A6CB0D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838264D11A45D53900A6CB0D /* LaunchScreen.xib */; };
 		838264DF1A45D53900A6CB0D /* SceneKitTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838264DE1A45D53900A6CB0D /* SceneKitTutorialTests.swift */; };
+		838264E91A45D58E00A6CB0D /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838264E81A45D58E00A6CB0D /* SceneKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		838264D81A45D53900A6CB0D /* SceneKitTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SceneKitTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		838264DD1A45D53900A6CB0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		838264DE1A45D53900A6CB0D /* SceneKitTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitTutorialTests.swift; sourceTree = "<group>"; };
+		838264E81A45D58E00A6CB0D /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838264E91A45D58E00A6CB0D /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		838264BA1A45D53900A6CB0D = {
 			isa = PBXGroup;
 			children = (
+				838264E81A45D58E00A6CB0D /* SceneKit.framework */,
 				838264C51A45D53900A6CB0D /* SceneKitTutorial */,
 				838264DB1A45D53900A6CB0D /* SceneKitTutorialTests */,
 				838264C41A45D53900A6CB0D /* Products */,
