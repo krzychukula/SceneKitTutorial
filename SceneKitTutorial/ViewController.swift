@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         
         
         scnView.autoenablesDefaultLighting = true
+        scnView.allowsCameraControl = true
     }
 
     override func didReceiveMemoryWarning() {
