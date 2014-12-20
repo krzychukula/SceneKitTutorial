@@ -21,12 +21,14 @@ class ViewController: UIViewController {
         scnView.backgroundColor = UIColor.blackColor()
         
         let sphereGeometry = SCNSphere(radius: 1.0)
+        sphereGeometry.firstMaterial?.diffuse.contents = UIColor.redColor()
         let sphereNode = SCNNode(geometry: sphereGeometry)
         //scnView.rootNode.addChildNode(sphereNode)
         scnView.scene?.rootNode.addChildNode(sphereNode)
         
         //SECOND
         let secondSphereGeometry = SCNSphere(radius: 0.5)
+        secondSphereGeometry.firstMaterial?.diffuse.contents = UIColor.greenColor()
         let secondSphereNode = SCNNode(geometry: secondSphereGeometry)
         secondSphereNode.position = SCNVector3(x: 3.0, y: 0.0, z: 0.0)
         scene.rootNode.addChildNode(secondSphereNode)
